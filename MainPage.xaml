@@ -1,0 +1,75 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:Module01Exercise01"
+             x:Class="Module01Exercise01.MainPage"
+             BackgroundColor="{DynamicResource LocalBackgroundColor}">
+
+    <ContentPage.Resources>
+        <x:String x:Key="StaticUsername">Mark Anthony Soberano</x:String>
+        <x:String x:Key="DynamicUsername">Profile</x:String>
+        <Color x:Key="DynamicBoxColor">Blue</Color>
+        <Color x:Key="LocalBackgroundColor">purple</Color>
+    </ContentPage.Resources>
+    <ScrollView>
+        <VerticalStackLayout
+            Padding="30,0"
+            Spacing="25">
+
+            <!--STATIC RESOURCES-->
+            <Label Text="{Binding Firstname}" 
+                   TextColor="{Binding ColorRed}"
+                   HorizontalOptions="Center"/>
+
+            <Label x:Name="StaticResourceLabel" 
+                   Text="{StaticResource StaticUsername}"
+                   HorizontalOptions="Center"
+                   TextColor="Black"/>
+
+            <!--ENTRY NAME-->
+            <Entry x:Name="MyName"
+                   Placeholder="Enter your name" 
+                   TextColor="Black"
+                   HorizontalTextAlignment="Center" 
+                   Margin="40,0"/>
+
+            <!--ENTRY EMAIL-->
+            <Entry x:Name="Email"
+                   Placeholder="Enter your Email"
+                   TextColor="Black"
+                   HorizontalTextAlignment="Center" 
+                   Margin="40,0"/>
+         
+            <!--DOB-->
+            <DatePicker HorizontalOptions="Center" TextColor="Black"/>
+
+
+            <!--ENTRY BIO-->
+            <Editor Placeholder="Bio"   
+                    HorizontalTextAlignment="Center" 
+                    Margin="40,0"/>
+            
+            <!--SAVE BUTTON-->
+            <Button Margin="80,0" 
+                    Text="Save Button" 
+                    Clicked="Button_Clicked"></Button>
+
+            <!--Dynamic Resource-->
+            <Button Text="Change Background Beige"
+                    Clicked="OnChangedBackgroundColorG"
+                    Margin="80,0" />
+
+            <Button Text="Change Background LightBlue"
+                    Clicked="OnChangedBackgroundColorL"
+                    Margin="80,0" />
+
+               <!--CUSTOM MARKUP EXTENSION-->
+
+            <Label Text="{local:CurrenDateExtension}" 
+                   HorizontalOptions="Center"
+                   TextColor="Black"/>
+
+        </VerticalStackLayout>
+    </ScrollView>
+
+</ContentPage>
