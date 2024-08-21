@@ -63,7 +63,11 @@
                     Clicked="OnChangedBackgroundColorL"
                     Margin="80,0" />
 
-               <!--CUSTOM MARKUP EXTENSION-->
+            <Button Margin="80,0" 
+                    Text="Update" 
+                    Clicked="Update"></Button>
+
+            <!--CUSTOM MARKUP EXTENSION-->
 
             <Label Text="{local:CurrenDateExtension}" 
                    HorizontalOptions="Center"

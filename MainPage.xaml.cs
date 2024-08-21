@@ -36,6 +36,10 @@
             var email = Email.Text;
         }
 
+        private async void update(object sender, EventArgs e)
+        {
+            await DisplayAlert("Aler", "Info Updated", "Ok");
+        }
     }
 
 }
